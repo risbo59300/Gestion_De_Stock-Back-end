@@ -1,9 +1,6 @@
 package rca.risbo.gestiondestock.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -13,6 +10,7 @@ import java.time.Instant;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @Entity
+@Builder
 @Data
 @Table(name = "mvtstk")
 public class MvtStk extends AbstractEntity{

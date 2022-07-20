@@ -3,14 +3,12 @@ package rca.risbo.gestiondestock.model;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
+@Builder
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "fournisseur")
@@ -22,8 +20,9 @@ public class Fournisseur extends AbstractEntity{
     @Column(name = "prenom")
     private String prenom;
 
-    @Embedded //signifie que ce champ est un champ composé
-    private Adresse addresse;
+    //Embedded signifie que ce champ est un champ composé
+    @Embedded
+    private Adresse adresse;
 
     @Column(name = "photo")
     private String photo;

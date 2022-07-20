@@ -1,9 +1,6 @@
 package rca.risbo.gestiondestock.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -20,8 +17,8 @@ public class Article extends AbstractEntity{
     @Column(name = "codearticle")
     private String codeArticle;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "designation")
+    private String designation;
 
     @Column(name = "prixunitaireht")
     private BigDecimal prixUnitaireHt;
@@ -34,6 +31,9 @@ public class Article extends AbstractEntity{
 
     @Column(name = "photo")
     private String photo;
+
+    @Column(name = "identreprise")
+    private Integer idEntreprise;
 
     @ManyToOne
     @JoinColumn(name = "idcategory")

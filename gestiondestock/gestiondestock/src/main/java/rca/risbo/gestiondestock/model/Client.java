@@ -13,6 +13,7 @@ import java.util.Set;
 @Setter
 @EqualsAndHashCode(callSuper = true)
 @Entity
+@Builder
 @Table(name = "client")
 public class Client extends AbstractEntity{
 
@@ -23,7 +24,7 @@ public class Client extends AbstractEntity{
     private String prenom;
 
      @Embedded //signifie que ce champ est un champ composé
-     private Adresse addresse;
+     private Adresse adresse;
 
     @Column(name = "photo")
     private String photo;
