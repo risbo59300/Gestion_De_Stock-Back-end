@@ -6,6 +6,7 @@ import org.springframework.data.repository.query.Param;
 import rca.risbo.gestiondestock.model.Article;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ArticleRepository extends JpaRepository<Article, Integer> {
 
@@ -18,5 +19,7 @@ public interface ArticleRepository extends JpaRepository<Article, Integer> {
     List<Article> findByCustomnativeQuery(@Param("code") String c);
 
     List<Article> findByCodeArticleIgnoreCaseAndDesignation(String codeArticle, String designation);
+
+    Optional<Article> findArticleByCodeArticle(String codeArticle);
 
 }
