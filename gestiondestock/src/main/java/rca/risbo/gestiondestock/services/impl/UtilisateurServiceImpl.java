@@ -30,10 +30,8 @@ public class UtilisateurServiceImpl implements UtilisateurService {
   private PasswordEncoder passwordEncoder;
 
   @Autowired
-  public UtilisateurServiceImpl(UtilisateurRepository utilisateurRepository,
-                                PasswordEncoder passwordEncoder) {
+  public UtilisateurServiceImpl(UtilisateurRepository utilisateurRepository) {
     this.utilisateurRepository = utilisateurRepository;
-    this.passwordEncoder = passwordEncoder;
   }
 
   @Override

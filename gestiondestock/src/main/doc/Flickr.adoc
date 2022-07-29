@@ -1,0 +1,19 @@
+Flickr est une API qui permet d'enregistrer des photos dans le cloud plutot que dans une BDD.
+Pour configurer flickr, il faut:
+-Creer un compte sur https://www.flickr.com/[],
+- Aller sur https://www.flickr.com/services/api/misc.api_keys.html[],
+cliquer sur #Creer une application#.
+-Ensuite, dans la partie `Obtenez votre clé API`, cliquez sur : #Demandez une clé API#.
+Une page s'ouvre, vous demandant de si vous voulez une clé `non commercial` ou `commercial`.
+-Choisissez `non commercial`.
+-Enfin, renseigner les champs obligatoires puis cliquer sur #Soumettre#.
+Cela vous génère une #api_keys# et un #api_secret#.
+Copiez les et mettez-les dans votre properties.
+
+Après avoir configurer votre classe Flickrconfiguration, lancer l'application en mode debug.
+cliquer sur le lien : https://www.flickr.com/services/oauth/authorize?perms=delete&oauth_token=72157720851971287-9f04f8693036764c[],
+puis `accepter` copier le code et le coller dans la console, puis la touche entrer pour executer le reste du code.
+Reccuperer les clés générer.
+Le premier correspond à : `appKey`, et le deuxieme à `appSecret` dans le fichier properties.yml
+
+Après cela, vous pouvez soit supprimer ou commenter la classe Flickrconfiguration et creer le service didié à Flickr.
