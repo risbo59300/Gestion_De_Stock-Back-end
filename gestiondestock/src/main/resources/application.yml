@@ -11,12 +11,21 @@ spring:
 #    properties:
 #      hibernate:
 #        session_factory:
-#          interceptor: com.bouali.gestiondestock.interceptor.Interceptor
+#          interceptor: rca.risbo.gestiondestock.interceptor.Interceptor
 
     # Hibernate DDL Auto (create, create-drop, update)
     hibernate:
       ddl-auto: update
       dialect: org.hibernate.dialect.MySQL5Dialect
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+#  Add default username for spring security
+  security:
+    user:
+      name: boris
+      password: boris
+      roles: manager
 
 server:
   port: 8081

@@ -1,5 +1,6 @@
 package rca.risbo.gestiondestock.controllers;
 
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import rca.risbo.gestiondestock.controllers.api.ArticleApi;

@@ -48,20 +48,4 @@ public class FlickrServiceImpl implements FlickrService {
         return flickr.getPhotosInterface().getPhoto(photoId).getMedium640Url();
     }
 
-//    private void connect() {
-//        flickr = new Flickr(apiKey, apiSecret, new REST());
-//
-//        Auth auth = new Auth();
-//
-//        auth.setPermission(Permission.DELETE);
-//
-//        auth.setToken(appKey);
-//        auth.setTokenSecret(appSecret);
-//
-//        RequestContext requestContext =  RequestContext.getRequestContext();
-//        requestContext.setAuth(auth);
-//
-//        flickr.setAuth(auth);
-//    }
-
 }
