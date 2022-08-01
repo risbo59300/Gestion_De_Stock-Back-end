@@ -1,7 +1,8 @@
-package rca.risbo.gestiondestock.controllers.api;
+package rca.risbo.gestiondestock.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
+import rca.risbo.gestiondestock.controllers.api.EntrepriseApi;
 import rca.risbo.gestiondestock.dto.EntrepriseDto;
 import rca.risbo.gestiondestock.services.EntrepriseService;
 

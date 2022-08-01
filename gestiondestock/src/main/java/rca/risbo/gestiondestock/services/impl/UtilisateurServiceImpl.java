@@ -2,7 +2,7 @@ package rca.risbo.gestiondestock.services.impl;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
+//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import rca.risbo.gestiondestock.dto.ChangerMotDePasseUtilisateurDto;
@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 public class UtilisateurServiceImpl implements UtilisateurService {
 
   private UtilisateurRepository utilisateurRepository;
-  private PasswordEncoder passwordEncoder;
+//  private PasswordEncoder passwordEncoder;
 
   @Autowired
   public UtilisateurServiceImpl(UtilisateurRepository utilisateurRepository) {
@@ -48,7 +48,7 @@ public class UtilisateurServiceImpl implements UtilisateurService {
     }
 
 
-    dto.setMoteDePasse(passwordEncoder.encode(dto.getMoteDePasse()));
+//    dto.setMoteDePasse(passwordEncoder.encode(dto.getMoteDePasse()));
 
     return UtilisateurDto.fromEntity(
         utilisateurRepository.save(
@@ -112,7 +112,7 @@ public class UtilisateurServiceImpl implements UtilisateurService {
     }
 
     Utilisateur utilisateur = utilisateurOptional.get();
-    utilisateur.setMoteDePasse(passwordEncoder.encode(dto.getMotDePasse()));
+//    utilisateur.setMoteDePasse(passwordEncoder.encode(dto.getMotDePasse()));
 
     return UtilisateurDto.fromEntity(
         utilisateurRepository.save(utilisateur)

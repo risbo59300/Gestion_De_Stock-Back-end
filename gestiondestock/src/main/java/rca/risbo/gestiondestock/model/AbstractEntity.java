@@ -12,20 +12,19 @@ import java.time.Instant;
 
 @Data
 @MappedSuperclass
-@EntityListeners(AuditingEntityListener.class)
+@EntityListeners(AuditingEntityListener.class) // Delegue a spring la creation des dates
 public class AbstractEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    // updatable=false permet d'éviter de mettre à jour creationDate.
     @CreatedDate
-    @Column(name = "creationDate", nullable = false)
-    @JsonIgnore
+    @Column(name = "creationDate", nullable = false, updatable = false)
     private Instant creationDate;
 
     @LastModifiedDate
     @Column(name = "lastModifieDate")
-    @JsonIgnore
     private Instant lastUpdateDate;
 }

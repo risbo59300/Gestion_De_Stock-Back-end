@@ -14,12 +14,12 @@ public interface EntrepriseApi {
     @PostMapping(ENTREPRISE_ENDPOINT + "/create")
     EntrepriseDto save(@RequestBody EntrepriseDto entrepriseDto);
 
-    @GetMapping(ENTREPRISE_ENDPOINT +"/{idEntreprise")
+    @GetMapping(ENTREPRISE_ENDPOINT +"/{idEntreprise}")
     EntrepriseDto findById(@PathVariable("idEntreprise") Integer id);
 
     @GetMapping(ENTREPRISE_ENDPOINT +"/all")
     List<EntrepriseDto> findAll();
 
-    @DeleteMapping(ENTREPRISE_ENDPOINT +"/delete/{idEntreprise")
+    @DeleteMapping(ENTREPRISE_ENDPOINT +"/delete/{idEntreprise}")
     void delete(@PathVariable("idEntreprise") Integer id);
 }

@@ -8,10 +8,10 @@ spring:
   jpa:
     database: MYSQL
     show-sql: true
-#    properties:
-#      hibernate:
-#        session_factory:
-#          interceptor: rca.risbo.gestiondestock.interceptor.Interceptor
+    properties:
+      hibernate:
+        session_factory:
+          interceptor: rca.risbo.gestionstock.interceptor.Interceptor
 
     # Hibernate DDL Auto (create, create-drop, update)
     hibernate:

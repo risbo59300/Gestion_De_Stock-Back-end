@@ -27,7 +27,7 @@ public class SwaggerConfiguration {
             .groupName("REST API V1")
             .select()
             .apis(RequestHandlerSelectors.basePackage("rca.risbo.gestiondestock"))
-            .paths(PathSelectors.ant(APP_ROOT + "/**"))
+            .paths(PathSelectors.any())
             .build();
     }
 }
