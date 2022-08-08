@@ -24,9 +24,7 @@ import java.util.stream.Collectors;
 public class EntrepriseServiceImpl implements EntrepriseService {
 
     private EntrepriseRepository entrepriseRepository;
-
     private UtilisateurService utilisateurService;
-
     private RolesRepository rolesRepository;
 
     @Autowired
@@ -44,7 +42,7 @@ public class EntrepriseServiceImpl implements EntrepriseService {
             throw new InvalidEntityException("L'entreprise n'est pas valide ", ErrorCodes.ENTREPRISE_NOT_VALID, errors);
         }
         EntrepriseDto saveEntreprise = EntrepriseDto.fromEntity(
-                entrepriseRepository.save(EntrepriseDto.toEntity(entrepriseDto))
+            entrepriseRepository.save(EntrepriseDto.toEntity(entrepriseDto))
         );
 
         UtilisateurDto utilisateur = fromEntreprise(saveEntreprise);
@@ -52,9 +50,9 @@ public class EntrepriseServiceImpl implements EntrepriseService {
         UtilisateurDto saveUser = utilisateurService.save(utilisateur);
 
         RolesDto rolesDto = RolesDto.builder()
-                .roleName("ADMIN")
-                .utilisateur(saveUser)
-                .build();
+            .roleName("ADMIN")
+            .utilisateur(saveUser)
+            .build();
 
         rolesRepository.save(RolesDto.toEntity(rolesDto));
 
@@ -63,15 +61,15 @@ public class EntrepriseServiceImpl implements EntrepriseService {
 
     private UtilisateurDto fromEntreprise(EntrepriseDto dto) {
         return UtilisateurDto.builder()
-                .adresse(dto.getAdresse())
-                .nom(dto.getNom())
-                .prenom(dto.getCodeFiscal())
-                .email(dto.getEmail())
-                .moteDePasse(generateRandomPassword())
-                .entreprise(dto)
-                .dateDeNaissance(Instant.now())
-                .photo(dto.getPhoto())
-                .build();
+            .adresse(dto.getAdresse())
+            .nom(dto.getNom())
+            .prenom(dto.getCodeFiscal())
+            .email(dto.getEmail())
+            .moteDePasse(generateRandomPassword())
+            .entreprise(dto)
+            .dateDeNaissance(Instant.now())
+            .photo(dto.getPhoto())
+            .build();
     }
 
     private String generateRandomPassword() {

@@ -41,8 +41,8 @@ public enum ErrorCodes {
     UTILISATEUR_ALREADY_EXISTS(120002),
     UTILISATEUR_CHANGE_PASSWORD_OBJECT_NOT_VALID(120003),
     VENTE_NOT_FOUND(13000),
-    VENTE_NOT_VALID(13001)
-    ;
+    VENTE_NOT_VALID(13001),
+    BAD_CREDENTIALS(400);
     private int code;
 
     ErrorCodes(int code) {
