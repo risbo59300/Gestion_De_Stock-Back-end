@@ -28,6 +28,7 @@ public class ApplicationRequestFilter extends OncePerRequestFilter {
     @Autowired
     private JwtUtil jwtUtil;
 
+    @Autowired
     private ApplicationUserDetailService userDetailService;
 
     @Override
